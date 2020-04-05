@@ -1,0 +1,41 @@
+.homepage{
+    padding-top:266px;
+}
+h3{
+    margin: 0;
+    padding: 0;
+}
+.image-loader{
+    position: absolute; 
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.card-container{
+    float: left;
+    padding: 30px 36px; 
+}
+.image-container{
+    width: 25%;
+    text-align: center;
+    float:left;
+}
+.profile-container{
+        display: inline-block;
+    width: -webkit-fill-available;
+}
+.move-container-head{
+    text-align: center;
+    padding: 10px;
+    background-color:#f4f4f4;
+    display: inline-block;
+    width: -webkit-fill-available;
+    position: relative;
+}
+.search-container{
+    padding:10px 100px 0px 100px
+}
+.button{
+    color: #ef5350
+}
+
