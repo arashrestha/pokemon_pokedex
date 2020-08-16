@@ -40,7 +40,7 @@ class PokemonCard extends Component {
         const { classes, history } = this.props;
         const { name, imageURL, pokemonIndex, imageLoading } = this.state
         return (
-            <div class='card-container'>
+            <div className='card-container'>
                 <Card className={classes.cardWidth} onClick={() => history.push(`/pokemon/${pokemonIndex}`)} >
                     <CardActionArea>
                         <CardMedia

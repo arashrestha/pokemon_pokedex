@@ -12,7 +12,7 @@ class Store {
 
     @action fetchAll() {
         this.isLoading = true
-        fetch(`${BaseURL}/pokemon?limit=200`)
+        fetch(`${BaseURL}/pokemon?limit=150`)
             .then(response => response.json())
             .then(res => {
                 if (res) {

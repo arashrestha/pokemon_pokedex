@@ -35,8 +35,10 @@ class App extends Component {
   }
 
   clear = () => {
-    this.props.store.clearSearchValues()
-    this.props.history.push('/homepage')
+    const { store, uiStore, history } = this.props
+    store.clearSearchValues()
+    uiStore.toggleSearch(!uiStore.openSearchBar)
+    history.push('/homepage')
   }
 
   _renderAppBar = (classes) => {

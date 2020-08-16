@@ -3,16 +3,35 @@ import { TextField, InputLabel, Select, FormControl, FormLabel, RadioGroup, Form
 import { appStyles } from "../muiStyles";
 import { withStyles } from '@material-ui/core/styles';
 import { inject, observer } from 'mobx-react'
-
-
+import { Arrow } from '../config/config'
+import $ from 'jquery'
 @inject('store', 'uiStore')
 @observer
 class SearchArea extends Component {
 
 
     onClear = () => {
-        this.props.store.clearSearchValues()
-        this.props.history.push('/homepage')
+        const { store, uiStore, history } = this.props
+        store.clearSearchValues()
+        history.push('/homepage')
+    }
+
+    componentDidMount() {
+        this.animateArrow();
+    }
+
+    animateArrow() {
+        const $arrow = document.querySelector('.arrow');
+
+        $arrow.animate([
+            { left: '0' },
+            { left: '10px' },
+            { left: '0' }
+        ], {
+            duration: 700,
+            iterations: Infinity
+        });
+
     }
 
     render() {
@@ -62,6 +81,12 @@ class SearchArea extends Component {
                     <Button style={{ color: '#ef5350' }} variant="outlined" onClick={this.onClear}>
                         Clear
                         </Button>
+                    {/* <div className='arrow-icon' >
+                        <img src={Arrow} alt='up-arrow' height='12px' style={{ transform: 'rotate(270deg)' }} />
+                    </div> */}
+                    <div class="icon">
+                        <div class="arrow"></div>
+                    </div>
                 </div>
 
             </Fragment >
